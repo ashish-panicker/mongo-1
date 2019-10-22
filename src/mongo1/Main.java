@@ -19,8 +19,7 @@ public class Main {
 		
 		MongoCursor<Document> cursor =  collection.find().iterator();
 		while (cursor.hasNext()) {
-			Document document = (Document) cursor.next();
-			System.out.println(document);
+			System.out.println(cursor.next().toJson());
 		}
 		mongoClient.close();
 
